@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improv Suggestion Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    select, input, button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+    .card {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Improv Suggestion Generator</h1>
+    <div>
+      <label for="category">Select Category:</label>
+      <select id="category"></select>
+      <button onclick="getRandomSuggestion()">Get Suggestion</button>
+    </div>
+    <div id="suggestionCard" class="card" style="display: none;"></div>
+    <div class="form">
+      <h2>Add New Suggestion</h2>
+      <input type="text" id="newSuggestion" placeholder="Enter suggestion">
+      <select id="newSuggestionCategory"></select>
+      <button onclick="addSuggestion()">Add Suggestion</button>
+    </div>
+    <div class="form">
+      <h2>Add New Category</h2>
+      <input type="text" id="newCategory" placeholder="Enter category name">
+      <button onclick="addCategory()">Add Category</button>
+    </div>
+    <p id="error" class="error"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
