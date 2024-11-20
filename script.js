@@ -43,7 +43,7 @@ function getRandomSuggestion() {
         suggestionCard.style.display = "block";
         errorElement.textContent = "";
       } else {
-        showError("No suggestions found for this category.");
+        showError(data.message || "No suggestions found for this category.");
       }
     })
     .catch(() => showError("Failed to get a random suggestion."));
@@ -68,7 +68,7 @@ function addCategory() {
         document.getElementById("newCategory").value = "";
         errorElement.textContent = "";
       } else {
-        showError("Failed to add category.");
+        showError(data.message || "Failed to add category.");
       }
     })
     .catch(() => showError("Failed to add category."));
@@ -93,7 +93,7 @@ function addSuggestion() {
         document.getElementById("newSuggestion").value = "";
         errorElement.textContent = "";
       } else {
-        showError("Failed to add suggestion.");
+        showError(data.message || "Failed to add suggestion.");
       }
     })
     .catch(() => showError("Failed to add suggestion."));
